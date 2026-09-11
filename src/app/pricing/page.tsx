@@ -196,8 +196,8 @@ export default function Pricing() {
         <Container>
           <SectionHeader
             eyebrow="Checkout"
-            title="See how maintenance checkout works"
-            subtitle="An explanatory preview of the secure payment flow. No real charge is made here."
+            title="Pay your GoodMash maintenance"
+            subtitle="PayFast is connected to the GoodMash checkout. Sandbox testing is used while the payment integration is being verified for live activation."
           />
           <CheckoutWidget />
           <div className="mx-auto mt-8 max-w-3xl">
@@ -205,7 +205,7 @@ export default function Pricing() {
               Payment flow
             </h3>
             <div className="grid gap-2 sm:grid-cols-4">
-              {["Select maintenance", "Select account / member(s)", "Payment via Ozow", "Maintenance activated"].map(
+              {["Select maintenance", "Select account / member(s)", "Payment via PayFast", "Maintenance activated"].map(
                 (s, i) => (
                   <div
                     key={s}
@@ -220,10 +220,7 @@ export default function Pricing() {
               )}
             </div>
             <p className="mt-6 text-center text-xs leading-relaxed text-ink-soft">
-              Ozow is the initial payment provider. Payment verification happens
-              securely through the GoodMash backend — never on the public
-              website frontend. Future payment providers (e.g. PayFast, Flash)
-              may be added after Ozow is operational.
+              PayFast is the current payment provider for GoodMash. Sandbox testing is used while the integration is being verified for live activation. Payment verification happens securely through the GoodMash backend - never on the public website frontend. Future providers can be added later without changing the GoodMash maintenance model.
             </p>
           </div>
         </Container>

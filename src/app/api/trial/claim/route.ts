@@ -316,10 +316,7 @@ export async function POST(
     } =
       await serviceAccountAccessToken();
 
-    const databasePath =
-      `${FIRESTORE_BASE}/${encodeURIComponent(
-        projectId
-      )}/databases/(default)/documents`;
+    const databasePath = `projects/${projectId}/databases/(default)/documents`;
 
     /*
      * ------------------------------------------------------

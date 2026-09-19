@@ -317,6 +317,7 @@ export async function POST(
       await serviceAccountAccessToken();
 
     const databasePath = `projects/${projectId}/databases/(default)/documents`;
+    const firestoreApiBase = `https://firestore.googleapis.com/v1/${databasePath}`;
 
     /*
      * ------------------------------------------------------
@@ -326,7 +327,7 @@ export async function POST(
 
     const transactionResponse =
       await fetch(
-        `${databasePath}:beginTransaction`,
+        `${firestoreApiBase}:beginTransaction`,
         {
           method: "POST",
           headers: {
@@ -386,7 +387,7 @@ export async function POST(
 
     const batchGetResponse =
       await fetch(
-        `${databasePath}:batchGet`,
+        `${firestoreApiBase}:batchGet`,
         {
           method: "POST",
           headers: {
@@ -546,7 +547,7 @@ export async function POST(
 
       const commitResponse =
         await fetch(
-          `${databasePath}:commit`,
+          `${firestoreApiBase}:commit`,
           {
             method: "POST",
             headers: {
@@ -769,7 +770,7 @@ export async function POST(
 
     const commitResponse =
       await fetch(
-        `${databasePath}:commit`,
+        `${firestoreApiBase}:commit`,
         {
           method: "POST",
           headers: {
